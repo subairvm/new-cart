@@ -21,7 +21,7 @@ router.post('/add-product', async function(req, res, next) {
     let image=req.files.image
     image.mv('./public/qr-code-services/'+product._id+'.pdf',(err)=>{
       if(!err) {
-        res.redirect('/admin')
+        res.redirect('/sudmin')
       }else {
         console.log(err)
       }
@@ -33,7 +33,7 @@ router.get('/delete-product/:id',async (req,res)=>{
   productHelper.deleteProduct(proID).then((response)=>{
     if(response){
       fs.unlink('./public/product-images/'+proID+ '.pdf', function() {
-        res.redirect('/admin')
+        res.redirect('/sudmin')
       });
     }
   })

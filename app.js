@@ -31,7 +31,7 @@ app.use(session(
       resave: true,
     }));
 
-app.use('/admin', adminRouter);
+app.use('/sudmin', adminRouter);
 app.use('/', usersRouter);
 
 // catch 404 and forward to error handler
